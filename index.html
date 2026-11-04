@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="fr" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Malek Naamen · Portfolio</title>
+<meta name="description" content="Malek Naamen, élève-ingénieure Business Intelligence & ERP à ESPRIT. Stage de fin d'études de 6 mois dès janvier 2027, en France ou en Tunisie.">
+<meta name="author" content="Malek Naamen">
+<link rel="canonical" href="https://naamenmalek.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://naamenmalek.github.io/">
+<meta property="og:title" content="Malek Naamen · Ingénieure BI & Data">
+<meta property="og:description" content="Stage PFE de 6 mois dès janvier 2027 · Power BI, SQL, Machine Learning, Full-Stack · 5 stages en entreprise.">
+<meta property="og:image" content="https://naamenmalek.github.io/img/apercu.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Malek Naamen · Ingénieure BI & Data">
+<meta name="twitter:description" content="Stage PFE de 6 mois dès janvier 2027 · Power BI, SQL, Machine Learning, Full-Stack.">
+<meta name="twitter:image" content="https://naamenmalek.github.io/img/apercu.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237b5cff'/%3E%3Cstop offset='1' stop-color='%23ff6b5b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='18' fill='url(%23g)'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='800' font-size='26' fill='white' text-anchor='middle'%3EMN%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Univers coloré : taches de couleur floues, cartes arrondies à en-têtes en dégradé ; deux modes (clair, sombre) pilotés par data-mode */
+:root{
+  --bg:#fff8f3;
+  --card:#ffffff;
+  --ink:#1d1442;
+  --muted:#6a6286;
+  --coral:#ff6b5b;
+  --violet:#7b5cff;
+  --mint:#19c2a0;
+  --sun:#ffb938;
+  --soft:#f3efff;
+  --soft-coral:#fff0eb; --soft-coral-ink:#d9482f;
+  --soft-mint:#e5f8f3; --soft-mint-ink:#0f8f75;
+  --win:linear-gradient(90deg,#fff3d6,#ffe3dd);
+  --shadow:0 12px 30px rgba(29,20,66,.08);
+  --glass:rgba(255,255,255,.72);
+  --blob:.55;
+  --display:"Unbounded", "Segoe UI", system-ui, sans-serif;
+  --body:"Outfit", "Segoe UI", system-ui, sans-serif;
+  color-scheme:light;
+}
+:root[data-mode="dark"]{
+  --bg:#120d2b;
+  --card:#1c1540;
+  --ink:#f1edff;
+  --muted:#b3aad6;
+  --soft:#2a2160;
+  --soft-coral:#3a1f33; --soft-coral-ink:#ff9a8c;
+  --soft-mint:#143a3c; --soft-mint-ink:#5ee6c8;
+  --win:linear-gradient(90deg,#3a2a1a,#3a1f2c);
+  --shadow:0 12px 30px rgba(0,0,0,.35);
+  --glass:rgba(28,21,64,.75);
+  --blob:.35;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;overflow-x:hidden;transition:background .25s,color .25s}
+a{color:var(--violet)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--violet);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.12;margin:0}
+p{margin:0}
+html[lang="fr"] .en, html[lang="en"] .fr{display:none!important}
+
+/* Fond */
+.blobs{position:absolute;inset:0;overflow:hidden;z-index:0;pointer-events:none}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:var(--blob)}
+.b1{width:520px;height:520px;background:var(--violet);top:-160px;right:-120px}
+.b2{width:420px;height:420px;background:var(--coral);top:180px;left:-160px}
+.b3{width:360px;height:360px;background:var(--sun);top:460px;right:25%}
+.hero{position:relative;padding:24px 0 72px}
+.hero .wrap{position:relative;z-index:1}
+
+/* Barre du haut */
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:48px;flex-wrap:wrap}
+.logo{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;font-family:var(--display);font-weight:800;color:#fff;background:linear-gradient(135deg,var(--violet),var(--coral));text-decoration:none;box-shadow:0 8px 24px rgba(123,92,255,.35)}
+.menu{display:flex;gap:4px;flex-wrap:wrap;background:var(--glass);backdrop-filter:blur(10px);padding:6px;border-radius:999px}
+.menu a{color:var(--ink);text-decoration:none;font-weight:500;font-size:.95rem;padding:8px 14px;border-radius:999px}
+.menu a:hover{background:var(--ink);color:var(--bg)}
+@media (max-width:860px){.menu{display:none}}
+.tools{display:flex;gap:8px;align-items:center}
+.toggle{font:inherit;font-weight:600;font-size:.9rem;border:0;cursor:pointer;color:var(--ink);background:var(--glass);backdrop-filter:blur(10px);border-radius:999px;padding:9px 14px;display:inline-flex;gap:6px;align-items:center}
+.toggle:hover{background:var(--ink);color:var(--bg)}
+.lang b{opacity:.45;font-weight:600}
+html[lang="fr"] .lang .l-fr, html[lang="en"] .lang .l-en{opacity:1;font-weight:800}
+.mode svg{width:18px;height:18px}
+html[data-mode="dark"] .mode .sun-i, html[data-mode="light"] .mode .moon-i{display:none}
+
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+@media (max-width:860px){.hero-grid{grid-template-columns:1fr}}
+.badge{display:inline-flex;align-items:center;gap:8px;background:var(--card);border-radius:999px;padding:8px 16px;font-weight:600;font-size:.92rem;box-shadow:var(--shadow)}
+.badge i{width:10px;height:10px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 4px rgba(25,194,160,.2);flex:none}
+.hero h1{font-size:clamp(2.5rem,6.5vw,4.5rem);font-weight:800;margin:20px 0 18px;letter-spacing:-.02em}
+.hero h1 span.grad{background:linear-gradient(90deg,var(--violet),var(--coral) 60%,var(--sun));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:1.2rem;color:var(--muted);max-width:52ch}
+.lead b{color:var(--ink)}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;font-weight:600;text-decoration:none;color:var(--ink);background:var(--card);box-shadow:var(--shadow);transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.main{color:#fff;background:linear-gradient(135deg,var(--violet),var(--coral))}
+.btn svg{width:18px;height:18px}
+.mail{margin-top:12px;color:var(--muted);font-size:.95rem}
+
+/* Photo et chiffres */
+.side{display:grid;gap:18px;justify-items:center}
+.photo{width:min(300px,70vw);aspect-ratio:1;border-radius:42% 58% 55% 45% / 48% 42% 58% 52%;padding:6px;background:linear-gradient(135deg,var(--violet),var(--coral),var(--sun));box-shadow:0 20px 50px rgba(123,92,255,.3)}
+.photo img{width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%}
+.stat{background:var(--card);border-radius:22px;padding:14px 16px;box-shadow:var(--shadow)}
+.stat b{display:block;font-family:var(--display);font-size:1.45rem;font-variant-numeric:tabular-nums}
+.stat span{color:var(--muted);font-size:.9rem;line-height:1.3;display:block}
+.stat:last-child:nth-child(odd){grid-column:1/-1}
+.c1 b{color:var(--violet)} .c2 b{color:var(--coral)} .c3 b{color:var(--mint)} .c4 b{color:#e39a12}
+
+section{padding:72px 0 0}
+.sec-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:28px;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(1.8rem,4vw,2.6rem)}
+.sec-head p{color:var(--muted);max-width:42ch}
+
+/* Projet vedette */
+.feature{border-radius:32px;overflow:hidden;background:linear-gradient(135deg,#1d1442,#3a2585 55%,#7b5cff);color:#fff;box-shadow:0 24px 60px rgba(58,37,133,.3)}
+.feature-in{display:grid;grid-template-columns:1fr 1fr}
+@media (max-width:860px){.feature-in{grid-template-columns:1fr}}
+.feature .text{padding:36px;display:grid;gap:16px;align-content:start}
+.kicker{font-weight:600;color:var(--sun);font-size:.92rem;letter-spacing:.04em;text-transform:uppercase}
+.feature h3{font-size:1.9rem}
+.feature p{color:rgba(255,255,255,.82)}
+.nums{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.num{background:rgba(255,255,255,.1);border-radius:18px;padding:12px 14px}
+.num b{display:block;font-family:var(--display);font-size:1.4rem;color:#fff;font-variant-numeric:tabular-nums}
+.num span{font-size:.85rem;color:rgba(255,255,255,.75)}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:18px;align-content:center}
+.gallery img{width:100%;max-width:100%;height:auto;border-radius:18px;display:block}
+.gallery img:first-child{grid-column:1/-1}
+.gallery img:not(:first-child){aspect-ratio:16/10;object-fit:cover;object-position:left top}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{font-size:.82rem;font-weight:600;padding:5px 12px;border-radius:999px;background:rgba(255,255,255,.14);color:#fff}
+.gh{display:inline-flex;justify-self:start;gap:8px;align-items:center;background:#fff;color:#1d1442;padding:11px 20px;border-radius:999px;font-weight:700;text-decoration:none}
+
+/* Autres projets */
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:22px}
+@media (max-width:760px){.cards{grid-template-columns:1fr}}
+.card{background:var(--card);border-radius:28px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.band{height:96px;display:flex;align-items:end;padding:18px 24px}
+.band span{font-family:var(--display);font-weight:700;color:#fff;font-size:.85rem;background:rgba(29,20,66,.25);padding:5px 12px;border-radius:999px}
+.g1{background:linear-gradient(135deg,var(--coral),var(--sun))}
+.g2{background:linear-gradient(135deg,var(--mint),#3c8dff)}
+.shots3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:14px 14px 0}
+.shots3.duo{grid-template-columns:1fr 1fr}
+.shots3 img{width:100%;max-width:100%;aspect-ratio:16/9;object-fit:cover;object-position:center;border-radius:14px;display:block}
+.shots3 img.wide{grid-column:1/-1;aspect-ratio:auto}
+@media (max-width:520px){.shots3,.shots3.duo{grid-template-columns:1fr}}
+.card .in{padding:22px 24px 26px;display:grid;gap:12px;flex:1;align-content:start}
+.card h3{font-size:1.3rem}
+.card p{color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:7px}
+.tags span{font-size:.82rem;font-weight:600;padding:4px 11px;border-radius:999px;background:var(--soft);color:var(--violet)}
+.card:has(.g1) .tags span{background:var(--soft-coral);color:var(--soft-coral-ink)}
+.card:has(.g2) .tags span{background:var(--soft-mint);color:var(--soft-mint-ink)}
+.more{font-weight:700;text-decoration:none;color:var(--ink)}
+.more:hover{color:var(--violet)}
+
+/* Expériences */
+.jobs{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+@media (max-width:760px){.jobs{grid-template-columns:1fr}}
+.job{background:var(--card);border-radius:26px;padding:24px;box-shadow:var(--shadow);display:grid;gap:10px;align-content:start;border-top:6px solid var(--violet)}
+.job:nth-child(2){border-top-color:var(--coral)}
+.job:nth-child(3){border-top-color:var(--mint)}
+.job:nth-child(4){border-top-color:var(--sun)}
+.job.big{grid-column:1/-1}
+.when{font-size:.88rem;font-weight:600;color:var(--muted)}
+.job h3{font-size:1.15rem}
+.job h3 em{font-style:normal;color:var(--violet)}
+.job ul{margin:0;padding-left:20px}
+.job li{margin:4px 0}
+.job p{color:var(--muted)}
+.win{background:var(--win);padding:12px 16px;border-radius:16px;font-weight:600}
+
+/* Compétences */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.skill{border-radius:26px;padding:22px;color:#fff;display:grid;gap:12px;align-content:start}
+.skill h3{font-size:1.05rem}
+.skill .tags span{background:rgba(255,255,255,.22);color:#fff}
+.s1{background:linear-gradient(135deg,#7b5cff,#a68bff)}
+.s2{background:linear-gradient(135deg,#ff6b5b,#ff9a7a)}
+.s3{background:linear-gradient(135deg,#13a98b,#3fcfb2)}
+.s4{background:linear-gradient(135deg,#3c8dff,#6fa9ff)}
+.s5{background:linear-gradient(135deg,#d48a07,#f2b33d)}
+
+/* Formation */
+.edu{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:860px){.edu{grid-template-columns:1fr}}
+.box{background:var(--card);border-radius:26px;padding:24px;box-shadow:var(--shadow);display:grid;gap:14px;align-content:start}
+.box h3{font-size:1rem;color:var(--violet)}
+.box div b{display:block}
+.box div>span{color:var(--muted);font-size:.95rem;display:block}
+.verify{display:inline-flex;align-items:center;gap:6px;margin-top:4px;font-size:.88rem;font-weight:700;text-decoration:none;color:var(--mint)}
+.verify:hover{text-decoration:underline}
+.verify svg{width:15px;height:15px}
+
+/* Contact */
+.contact{margin:80px 0 48px;border-radius:36px;padding:48px 36px;background:linear-gradient(135deg,var(--violet),var(--coral) 70%,var(--sun));color:#fff}
+.contact h2{font-size:clamp(1.8rem,4vw,2.6rem);max-width:18ch}
+.contact p{margin-top:14px;max-width:56ch;color:rgba(255,255,255,.92)}
+.contact .btn{color:#1d1442;background:#fff}
+.contact .btn.main{background:#1d1442;color:#fff}
+.contact .mail{color:rgba(255,255,255,.92)}
+.sgal{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:6px}
+.sgal a{display:block;border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+.sgal img{display:block;width:100%;max-width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top left;transition:transform .2s}
+.sgal a:hover img{transform:scale(1.03)}
+@media (max-width:640px){.sgal{grid-template-columns:1fr 1fr}}
+.lb{position:fixed;inset:0;z-index:50;background:rgba(10,6,30,.86);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.lb.on{display:flex}
+.lb img{max-width:100%;max-height:100%;border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.lb button{position:absolute;top:16px;right:16px;font:inherit;font-weight:700;border:0;border-radius:999px;padding:10px 16px;background:#fff;color:#1d1442;cursor:pointer}
+.cvbox{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:32px;align-items:center;background:var(--card);border-radius:32px;padding:28px;box-shadow:var(--shadow)}
+@media (max-width:820px){.cvbox{grid-template-columns:1fr}}
+.cvsheet{display:block;border-radius:16px;overflow:hidden;box-shadow:0 16px 40px rgba(29,20,66,.18);cursor:zoom-in;background:#fff}
+.cvsheet img{display:block;width:100%;max-width:100%;height:auto}
+.cvside{display:grid;gap:14px;align-content:center}
+.cvside h3{font-size:1.4rem}
+.cvside p{color:var(--muted)}
+.card.full{grid-column:1/-1}
+.g3{background:linear-gradient(135deg,#7b5cff,#e0559b)}
+.card:has(.g3) .tags span{background:var(--soft);color:var(--violet)}
+.shots3.quad{grid-template-columns:repeat(4,1fr)}
+.shots3 a{display:block;border-radius:14px;overflow:hidden;cursor:zoom-in}
+.shots3 a img{border-radius:0;aspect-ratio:16/10;object-fit:cover;object-position:top left}
+.shots3 a.wide{grid-column:1/-1}
+.shots3 a.wide img{aspect-ratio:auto}
+@media (max-width:640px){.shots3.quad{grid-template-columns:1fr 1fr}}
+.g4{background:linear-gradient(135deg,#1d1442,#19c2a0)}
+.card:has(.g4) .tags span{background:var(--soft-mint);color:var(--soft-mint-ink)}
+.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:4px 0}
+@media (max-width:760px){.flow{grid-template-columns:1fr}}
+.step{background:var(--bg);border-radius:20px;padding:18px;display:grid;gap:6px;align-content:start}
+.step b{width:34px;height:34px;border-radius:12px;display:grid;place-items:center;font-family:var(--display);color:#fff;background:linear-gradient(135deg,#1d1442,#19c2a0)}
+.step h4{margin:0;font-family:var(--display);font-size:1rem}
+.step p{font-size:.95rem}
+</style>
+<script>
+(function(){
+  var d=document.documentElement,m=null,l=null;
+  try{m=localStorage.getItem('mn-mode');l=localStorage.getItem('mn-lang')}catch(e){}
+  if(!m){m=(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light'}
+  if(!l){l=((navigator.language||'fr').slice(0,2)==='fr')?'fr':'en'}
+  d.setAttribute('data-mode',m);d.setAttribute('lang',l);
+})();
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="blobs" aria-hidden="true"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
+  <div class="wrap">
+    <div class="top">
+      <a class="logo" href="#" aria-label="Malek Naamen">MN</a>
+      <nav class="menu" aria-label="Sections">
+        <a href="#projets"><span class="fr">Projets</span><span class="en">Projects</span></a>
+        <a href="#experiences"><span class="fr">Expériences</span><span class="en">Experience</span></a>
+        <a href="#competences"><span class="fr">Compétences</span><span class="en">Skills</span></a>
+        <a href="#formation"><span class="fr">Formation</span><span class="en">Education</span></a>
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="tools">
+        <button class="toggle lang" id="btn-lang" type="button" aria-label="Changer de langue / Change language"><b class="l-fr">FR</b>/<b class="l-en">EN</b></button>
+        <button class="toggle mode" id="btn-mode" type="button" aria-label="Mode clair ou sombre / Light or dark mode">
+          <svg class="moon-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="sun-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="hero-grid">
+      <div>
+        <span class="badge"><i></i><span class="fr">Stage PFE de 6 mois dès janvier 2027 · France ou Tunisie</span><span class="en">6-month final-year internship from January 2027 · France or Tunisia</span></span>
+        <h1><span class="fr">Bonjour, je suis</span><span class="en">Hi, I'm</span> <span class="grad">Malek Naamen</span></h1>
+        <p class="lead fr"><b>Élève-ingénieure Business Intelligence &amp; ERP à ESPRIT.</b> Je construis des Data Warehouses, des tableaux de bord Power BI et des modèles de machine learning, et je les livre dans de vraies applications web.</p>
+        <p class="lead en"><b>Business Intelligence &amp; ERP engineering student at ESPRIT.</b> I build data warehouses, Power BI dashboards and machine learning models, and I ship them inside real web applications.</p>
+        <div class="actions">
+          <a class="btn main" href="CV_Malek_Naamen.pdf" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+            <span class="fr">Télécharger mon CV</span><span class="en">Download my CV</span></a>
+          <a class="btn" href="mailto:malek.naamen@esprit.tn"><span class="fr">M'écrire</span><span class="en">Email me</span></a>
+          <a class="btn" href="https://www.linkedin.com/in/malek-naamen">LinkedIn</a>
+          <a class="btn" href="https://github.com/NaamenMalek">GitHub</a>
+        </div>
+        <p class="mail">malek.naamen@esprit.tn</p>
+      </div>
+      <div class="side">
+        <div class="photo"><img src="img/photo.jpg" alt="Photo de Malek Naamen"></div>
+        <div class="stats">
+          <div class="stat c1"><b>5</b><span class="fr">stages en entreprise depuis 2022</span><span class="en">internships since 2022</span></div>
+          <div class="stat c2"><b>Bac+6</b><span class="fr">diplôme d'ingénieure BI &amp; ERP en 2027</span><span class="en">BI &amp; ERP engineering degree in 2027</span></div>
+          <div class="stat c4"><b>4</b><span class="fr">certifications Hedera et AWS Academy</span><span class="en">Hedera and AWS Academy certifications</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <section id="projets" style="padding-top:8px">
+    <div class="sec-head">
+      <h2><span class="fr">Projets</span><span class="en">Projects</span></h2>
+      <p><span class="fr">Des projets complets, de la donnée brute jusqu'à l'application.</span><span class="en">End-to-end projects, from raw data to a working application.</span></p>
+    </div>
+
+    <article class="feature">
+      <div class="feature-in">
+        <div class="text">
+          <span class="kicker">Deep Learning · ESPRIT 5ERP-BI · 2026</span>
+          <h3>RoadAnomaly</h3>
+          <p class="fr">Un animal, un rocher, un carton tombé d'un camion : le modèle repère ce qui n'a rien à faire sur la route et décide s'il faut freiner, ralentir ou continuer. Avec seulement 60 images annotées.</p>
+          <p class="en">An animal, a rock, a box fallen off a truck: the model spots what doesn't belong on the road and decides whether to brake, slow down or keep going. With only 60 labeled images.</p>
+          <div class="nums">
+            <div class="num"><b>0,65</b><span class="fr">IoU de segmentation</span><span class="en">segmentation IoU</span></div>
+            <div class="num"><b>89 %</b><span class="fr">de bonnes décisions</span><span class="en">correct decisions</span></div>
+            <div class="num"><b>0,91</b><span class="fr">AUROC sans annotation</span><span class="en">label-free AUROC</span></div>
+            <div class="num"><b>5</b><span class="fr">conditions dégradées testées</span><span class="en">degraded conditions tested</span></div>
+          </div>
+          <p class="fr">U-Net puis classifieur ResNet50, U-Net robuste réentraîné sur des images abîmées (nuit, sirocco, flou, poussière, compression) et autoencodeur pour détecter l'inconnu. Démo web Flask pour comparer les modèles en direct.</p>
+          <p class="en">U-Net followed by a ResNet50 classifier, a robust U-Net retrained on degraded images (night, sirocco, blur, dust, compression) and an autoencoder to detect the unknown. Flask web demo to compare the models live.</p>
+          <div class="pills"><span class="pill">TensorFlow</span><span class="pill">Keras</span><span class="pill">KerasTuner</span><span class="pill">U-Net</span><span class="pill">ResNet50</span><span class="pill">Flask</span></div>
+          <a class="gh" href="https://github.com/NaamenMalek/roadanomaly-app"><span class="fr">Voir le code sur GitHub →</span><span class="en">View the code on GitHub →</span></a>
+        </div>
+        <div class="gallery">
+          <img src="img/deux-modeles.jpg" alt="Même image floutée : le modèle normal dit continuer, le modèle robuste dit freiner">
+          <img src="img/diagnostic.jpg" alt="Diagnostic : animal détecté dans le couloir de conduite, décision freiner">
+          <img src="img/conditions.jpg" alt="Choix des conditions de conduite : nuit, sirocco, flou, poussière, compression">
+        </div>
+      </div>
+    </article>
+
+    <div class="cards">
+      <article class="card">
+        <div class="band g1"><span>Machine Learning · 2025–2026</span></div>
+        <div class="shots3">
+          <img class="wide" src="img/boostify-accueil.jpg" alt="Page d'accueil de Boostify avec ses trois outils de prédiction">
+          <img src="img/boostify-heure.jpg" alt="Prédiction de la meilleure heure de publication : 22:00">
+          <img src="img/boostify-visionnage.jpg" alt="Prédiction du temps de visionnage : 13 min 44 s, soit 68,71 %">
+          <img src="img/boostify-hashtags.jpg" alt="Recommandation de hashtags à partir du texte d'une publication">
+        </div>
+        <div class="in">
+          <h3>Boostify</h3>
+          <p class="fr">Plateforme ML pour créateurs de contenu : prédiction de la performance d'une publication (heure, taux de visionnage, hashtags) et recommandation par embeddings sémantiques, via une API et une interface web.</p>
+          <p class="en">ML platform for content creators: predicts a post's performance (best hour, watch ratio, hashtags) and recommends hashtags with semantic embeddings, through an API and a web interface.</p>
+          <div class="tags"><span>Python</span><span>Scikit-learn</span><span>SBERT</span><span>Flask</span><span>React</span></div>
+          <a class="more" href="https://github.com/NaamenMalek/prediction-heure_watchratio_hashtags-social-media"><span class="fr">Voir le code →</span><span class="en">View the code →</span></a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="band g2"><span>Business Intelligence · 2025</span></div>
+        <div class="shots3">
+          <img class="wide" src="img/rh-app.jpg" alt="Application web InfiniForma qui intègre le tableau de bord Power BI des formations">
+          <img src="img/rh-accueil.jpg" alt="Page d'accueil du tableau de bord InfiniForma">
+          <img src="img/rh-formations.jpg" alt="Tableau de bord Power BI des formations : coût, satisfaction de 87,26 %, indice de qualité de 87 %">
+          <img src="img/rh-performance.jpg" alt="Tableau de bord Power BI de la performance : ancienneté, salaire moyen, satisfaction, masse salariale">
+        </div>
+        <div class="in">
+          <h3><span class="fr">Analyse de la performance RH</span><span class="en">HR Performance Analytics</span></h3>
+          <p class="fr">Pipelines ETL qui consolident des données RH multi-sources, cubes analytiques et tableau de bord Power BI « InfiniForma », intégré à une application web : coût et qualité des formations, satisfaction, performance et masse salariale des employés.</p>
+          <p class="en">ETL pipelines consolidating multi-source HR data, analytical cubes and an "InfiniForma" Power BI dashboard embedded in a web app: training cost and quality, satisfaction, employee performance and payroll.</p>
+          <div class="tags"><span>SSIS</span><span>SSAS</span><span>SQL</span><span>Power BI</span><span>DAX</span><span>Python</span></div>
+          <a class="more" href="https://github.com/NaamenMalek/Analyse-de-la-performance-RH"><span class="fr">Voir le code →</span><span class="en">View the code →</span></a>
+        </div>
+      </article>
+      <article class="card full">
+        <div class="band g4"><span>NLP · Graphe · Graph-RAG · 2026</span></div>
+        <div class="in">
+          <h3><span class="fr">Assistant cybersécurité</span><span class="en">Cybersecurity assistant</span></h3>
+          <p class="fr">Un petit assistant de cybersécurité construit à partir d'un jeu de données de questions et réponses d'experts. Il classe les incidents, relie les menaces à leurs cibles dans un graphe de connaissances, et répond aux questions en suivant ce graphe.</p>
+          <p class="en">A small cybersecurity assistant built from a dataset of expert questions and answers. It classifies incidents, links threats to their targets in a knowledge graph, and answers questions by following that graph.</p>
+          <div class="flow">
+            <div class="step"><b>1</b><h4><span class="fr">Comprendre</span><span class="en">Understand</span></h4><p class="fr">Classification des incidents (phishing, malware, vulnérabilité) : TF-IDF, BiLSTM, DistilBERT, comparés par F1 macro.</p><p class="en">Incident classification (phishing, malware, vulnerability): TF-IDF, BiLSTM, DistilBERT, compared by macro F1.</p></div>
+            <div class="step"><b>2</b><h4><span class="fr">Relier</span><span class="en">Connect</span></h4><p class="fr">Extraction des entités (CVE, malwares, logiciels, IP), graphe de connaissances, clusters Louvain et GNN (GCN, GAT, Graph Transformer).</p><p class="en">Entity extraction (CVEs, malware, software, IPs), knowledge graph, Louvain clusters and GNNs (GCN, GAT, Graph Transformer).</p></div>
+            <div class="step"><b>3</b><h4><span class="fr">Répondre</span><span class="en">Answer</span></h4><p class="fr">Graph-RAG : incidents similaires (SBERT) et faits du graphe, réponse rédigée par un LLM local, comparée au RAG classique. Démo Gradio.</p><p class="en">Graph-RAG: similar incidents (SBERT) plus graph facts, answer written by a local LLM, compared with classic RAG. Gradio demo.</p></div>
+          </div>
+          <div class="tags"><span>Python</span><span>spaCy</span><span>SBERT</span><span>DistilBERT</span><span>GNN</span><span>Neo4j</span><span>Qwen2.5</span><span>Gradio</span></div>
+        </div>
+      </article>
+      <article class="card full">
+        <div class="band g3"><span>CRM · Dynamics 365 · 2026</span></div>
+        <div class="shots3 quad">
+          <a class="wide" href="img/tp-dashboard.jpg" data-zoom><img src="img/tp-dashboard.jpg" alt="Tableau de bord Power BI TravelPlus intégré dans Dynamics 365"></a>
+          <a href="img/tp-reservation.jpg" data-zoom><img src="img/tp-reservation.jpg" alt="Formulaire Réservation TravelPlus dans Dynamics 365"></a>
+          <a href="img/tp-bpf.jpg" data-zoom><img src="img/tp-bpf.jpg" alt="Business Process Flow « Suivi des demandes de voyage » sur un prospect"></a>
+          <a href="img/tp-prospects.jpg" data-zoom><img src="img/tp-prospects.jpg" alt="Vue des prospects ouverts"></a>
+          <a href="img/tp-workflow.jpg" data-zoom><img src="img/tp-workflow.jpg" alt="Workflow qui incrémente le nombre de réservations du voyageur"></a>
+        </div>
+        <div class="in">
+          <h3>TravelPlus</h3>
+          <p class="fr">Application CRM pour une agence de voyages sur Microsoft Dynamics 365 : tables Dataverse (voyageurs, voyages, réservations, prospects), formulaires et vues, workflow temps réel qui compte les réservations, JavaScript de formulaire, Business Process Flow sur les prospects et rapport Power BI intégré comme tableau de bord.</p>
+          <p class="en">CRM application for a travel agency on Microsoft Dynamics 365: Dataverse tables (travelers, trips, bookings, leads), forms and views, a real-time workflow that counts bookings, form JavaScript, a Business Process Flow on leads and a Power BI report embedded as a dashboard.</p>
+          <div class="tags"><span>Dynamics 365</span><span>Power Apps</span><span>Dataverse</span><span>JavaScript</span><span>Power BI</span></div>
+          <a class="more" href="https://github.com/NaamenMalek/TravelPlus-Dynamics365"><span class="fr">Voir le code →</span><span class="en">View the code →</span></a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="experiences">
+    <div class="sec-head">
+      <h2><span class="fr">Expériences</span><span class="en">Experience</span></h2>
+      <p><span class="fr">5 stages, de développeuse web à ingénieure data.</span><span class="en">5 internships, from web developer to data engineer.</span></p>
+    </div>
+    <div class="jobs">
+      <div class="job big">
+        <span class="when"><span class="fr">Juillet – août 2026 · Tunis</span><span class="en">July – August 2026 · Tunis</span></span>
+        <h3><span class="fr">Stagiaire ingénieure Data &amp; BI</span><span class="en">Data &amp; BI Engineering Intern</span> · <em>Sougui.TN</em></h3>
+        <ul class="fr">
+          <li>Data Warehouse en constellation et KPI de vente définis avec l'équipe ; dashboards Power BI interactifs avec sécurité au niveau des lignes.</li>
+          <li>Modèles de prévision des ventes, de segmentation et de scoring client, intégrés à une application web reliée à l'ERP.</li>
+          <li>Chatbot NLP-to-SQL et module Vision AI.</li>
+        </ul>
+        <ul class="en">
+          <li>Galaxy-schema data warehouse and sales KPIs defined with the team; interactive Power BI dashboards with row-level security.</li>
+          <li>Sales forecasting, customer segmentation and scoring models, integrated into a web application connected to the ERP.</li>
+          <li>NLP-to-SQL chatbot and a Vision AI module.</li>
+        </ul>
+        <div class="win"><span class="fr">Solution retenue parmi celles de 9 groupes, suivie d'une proposition de stage du CEO.</span><span class="en">Solution selected among 9 teams, followed by an internship offer from the CEO.</span></div>
+        <div class="sgal">
+          <a href="img/sougui-accueil.jpg" data-zoom><img src="img/sougui-accueil.jpg" alt="Accueil de la plateforme Sougui.TN BI : 5 modules (pilotage, ventes, clients, opérations, assistant)"></a>
+          <a href="img/sougui-dashboard.jpg" data-zoom><img src="img/sougui-dashboard.jpg" alt="Tableau de bord Power BI des ventes intégré à la plateforme"></a>
+          <a href="img/sougui-assistant.jpg" data-zoom><img src="img/sougui-assistant.jpg" alt="Assistant IA qui génère des requêtes SQL à partir de questions en langage naturel"></a>
+          <a href="img/sougui-vision.jpg" data-zoom><img src="img/sougui-vision.jpg" alt="Analyse d'image d'un produit avec LLaVA : catégorie, fourchette de prix, potentiel"></a>
+          <a href="img/sougui-idees.jpg" data-zoom><img src="img/sougui-idees.jpg" alt="Suggestions de nouveaux produits à lancer selon les tendances du marché"></a>
+          <a href="img/sougui-prix.jpg" data-zoom><img src="img/sougui-prix.jpg" alt="Price Matcher : comparaison des prix Sougui avec ceux des concurrents"></a>
+        </div>
+      </div>
+      <div class="job">
+        <span class="when"><span class="fr">Juillet – août 2025 · Tunis</span><span class="en">July – August 2025 · Tunis</span></span>
+        <h3><span class="fr">Stagiaire développeuse front-end</span><span class="en">Front-End Developer Intern</span> · <em>UTEEK</em></h3>
+        <p class="fr">Interfaces React responsives et composants réutilisables reliés au back-end via API REST : refonte UI/UX, back-office de commandes avec factures PDF, internationalisation.</p>
+        <p class="en">Responsive React interfaces and reusable components connected to the back end through REST APIs: UI/UX redesign, order back-office with PDF invoices, internationalization.</p>
+      </div>
+      <div class="job">
+        <span class="when"><span class="fr">Février – mai 2024 · Bizerte</span><span class="en">February – May 2024 · Bizerte</span></span>
+        <h3><span class="fr">Stagiaire PFE de licence</span><span class="en">Bachelor's Final-Year Intern</span> · <em>MediaLab Factory</em></h3>
+        <p class="fr">Plateforme de recrutement assistée par IA : base de données, API REST et tri automatique des candidatures avec l'API OpenAI.</p>
+        <p class="en">AI-assisted recruitment platform: database, REST APIs and automatic screening of applications with the OpenAI API.</p>
+      </div>
+      <div class="job big">
+        <span class="when"><span class="fr">Janvier 2023 et janvier 2022 · Bizerte</span><span class="en">January 2023 and January 2022 · Bizerte</span></span>
+        <h3><span class="fr">Stagiaire développeuse web</span><span class="en">Web Developer Intern</span> · <em>MediaLab Factory</em></h3>
+        <p class="fr">Application de facturation en Vue.js (suivi des paiements, export PDF) et application de gestion des recrutements en PHP / MySQL.</p>
+        <p class="en">Invoicing application in Vue.js (payment tracking, PDF export) and a recruitment management application in PHP / MySQL.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="competences">
+    <div class="sec-head">
+      <h2><span class="fr">Compétences</span><span class="en">Skills</span></h2>
+      <p><span class="fr">Une double compétence : la data et le développement.</span><span class="en">Two skill sets: data and software development.</span></p>
+    </div>
+    <div class="skills">
+      <div class="skill s1"><h3>BI &amp; Data</h3><div class="tags"><span>Power BI</span><span>DAX</span><span>Power Query</span><span>SSIS</span><span>SSAS</span><span>Talend</span><span>Data Warehouse</span></div></div>
+      <div class="skill s2"><h3><span class="fr">IA &amp; Deep Learning</span><span class="en">AI &amp; Deep Learning</span></h3><div class="tags"><span>Python</span><span>Scikit-learn</span><span>TensorFlow</span><span>Keras</span><span>NLP</span><span>SBERT</span><span>LLM</span></div></div>
+      <div class="skill s3"><h3><span class="fr">Bases de données</span><span class="en">Databases</span></h3><div class="tags"><span>SQL Server</span><span>PostgreSQL</span><span>MySQL</span><span>Oracle</span><span>MongoDB</span></div></div>
+      <div class="skill s4"><h3><span class="fr">Développement</span><span class="en">Development</span></h3><div class="tags"><span>Angular</span><span>React</span><span>Vue.js</span><span>Flask</span><span>Symfony</span><span>Spring Boot</span><span>Java</span></div></div>
+      <div class="skill s5"><h3><span class="fr">ERP &amp; outils</span><span class="en">ERP &amp; tools</span></h3><div class="tags"><span>SAP</span><span>Odoo</span><span>Dynamics 365</span><span>Power Apps</span><span>Git</span><span>Docker</span></div></div>
+    </div>
+  </section>
+
+  <section id="formation">
+    <div class="sec-head"><h2><span class="fr">Formation</span><span class="en">Education</span></h2></div>
+    <div class="edu">
+      <div class="box"><h3><span class="fr">Diplômes</span><span class="en">Degrees</span></h3>
+        <div><b><span class="fr">Ingénieure BI &amp; ERP (Bac+6)</span><span class="en">Engineering degree in BI &amp; ERP (Master's level)</span></b><span>ESPRIT, Tunis · 2024 – 2027</span></div>
+        <div><b><span class="fr">Licence en développement des systèmes d'information</span><span class="en">Bachelor's in Information Systems Development</span></b><span><span class="fr">ISET de Bizerte</span><span class="en">ISET Bizerte</span> · 2021 – 2024</span></div>
+      </div>
+      <div class="box"><h3>Certifications</h3>
+        <div><b>Hedera Certified Developer Associate (HCDA)</b><span>The Hashgraph Association · <span class="fr">16 oct. 2026</span><span class="en">16 Oct 2026</span></span>
+          <a class="verify" href="img/cert-hcda.jpg" data-zoom><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="fr">Voir le certificat</span><span class="en">View certificate</span></a></div>
+        <div><b>Hedera Certified Foundation (HCF)</b><span>The Hashgraph Association · <span class="fr">16 oct. 2026</span><span class="en">16 Oct 2026</span></span>
+          <a class="verify" href="img/cert-hcf.jpg" data-zoom><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="fr">Voir le certificat</span><span class="en">View certificate</span></a></div>
+        <div><b>Hedera Business Foundation (HBF)</b><span>The Hashgraph Association · <span class="fr">16 oct. 2026</span><span class="en">16 Oct 2026</span></span>
+          <a class="verify" href="img/cert-hbf.jpg" data-zoom><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="fr">Voir le certificat</span><span class="en">View certificate</span></a></div>
+        <div><b>AWS Academy Cloud Foundations</b><span>AWS Academy Graduate · 2026</span>
+          <a class="verify" href="https://www.credly.com/badges/596f3150-7197-4fee-a222-2e5e445188a4" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="fr">Vérifier sur Credly</span><span class="en">Verify on Credly</span></a></div>
+      </div>
+      <div class="box"><h3><span class="fr">Langues et engagement</span><span class="en">Languages &amp; involvement</span></h3>
+        <div><b><span class="fr">Arabe · Français C1 · Anglais B2</span><span class="en">Arabic · French C1 · English B2</span></b><span><span class="fr">Arabe langue maternelle, français courant</span><span class="en">Native Arabic, fluent French</span></span></div>
+        <div><b>IEEE Women in Engineering</b><span><span class="fr">Responsable RH puis Media Manager</span><span class="en">HR Lead, then Media Manager</span> · 2023 – 2024</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cv">
+    <div class="sec-head">
+      <h2><span class="fr">Mon CV</span><span class="en">My CV</span></h2>
+      <p><span class="fr">Une page, à lire ici ou à télécharger.</span><span class="en">One page, to read here or download.</span></p>
+    </div>
+    <div class="cvbox">
+      <a class="cvsheet" href="img/cv-apercu.jpg" data-zoom><img src="img/cv-apercu.jpg" alt="CV de Malek Naamen, une page"></a>
+      <div class="cvside">
+        <h3><span class="fr">Stage de fin d'études · Data Analyst / BI</span><span class="en">Final-year internship · Data Analyst / BI</span></h3>
+        <p><span class="fr">6 mois dès janvier 2027, en France ou en Tunisie, sous convention avec ESPRIT.</span><span class="en">6 months from January 2027, in France or Tunisia, under an agreement with ESPRIT.</span></p>
+        <div class="actions">
+          <a class="btn main" href="CV_Malek_Naamen.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span class="fr">Télécharger le PDF</span><span class="en">Download the PDF</span></a>
+          <a class="btn" href="img/cv-apercu.jpg" data-zoom><span class="fr">Agrandir</span><span class="en">Enlarge</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="contact" id="contact">
+    <h2><span class="fr">Un sujet de PFE en data ou en BI ?</span><span class="en">A data or BI internship topic?</span></h2>
+    <p class="fr">Je cherche un stage de fin d'études de 6 mois à partir de janvier 2027, en France ou en Tunisie, sous convention avec ESPRIT.</p>
+    <p class="en">I'm looking for a 6-month final-year internship starting January 2027, in France or Tunisia, under an internship agreement with ESPRIT.</p>
+    <div class="actions">
+      <a class="btn main" href="CV_Malek_Naamen.pdf" target="_blank" rel="noopener"><span class="fr">Télécharger mon CV</span><span class="en">Download my CV</span></a>
+      <a class="btn" href="mailto:malek.naamen@esprit.tn"><span class="fr">M'écrire</span><span class="en">Email me</span></a>
+      <a class="btn" href="https://www.linkedin.com/in/malek-naamen">LinkedIn</a>
+      <a class="btn" href="https://github.com/NaamenMalek">GitHub</a>
+    </div>
+    <p class="mail">malek.naamen@esprit.tn</p>
+  </div>
+
+</main>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Image agrandie"><button type="button" id="lb-close"><span class="fr">Fermer ✕</span><span class="en">Close ✕</span></button><img id="lb-img" alt=""></div>
+<script>
+(function(){
+  var d=document.documentElement;
+  function save(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+  document.getElementById('btn-lang').addEventListener('click',function(){
+    var l=d.getAttribute('lang')==='fr'?'en':'fr';d.setAttribute('lang',l);save('mn-lang',l);
+  });
+  document.getElementById('btn-mode').addEventListener('click',function(){
+    var m=d.getAttribute('data-mode')==='dark'?'light':'dark';d.setAttribute('data-mode',m);save('mn-mode',m);
+  });
+  var lb=document.getElementById('lb'),li=document.getElementById('lb-img');
+  function close(){lb.classList.remove('on');li.removeAttribute('src')}
+  document.querySelectorAll('[data-zoom]').forEach(function(a){
+    a.addEventListener('click',function(e){e.preventDefault();var im=a.querySelector('img');li.src=a.getAttribute('href');li.alt=im?im.alt:'';lb.classList.add('on');document.getElementById('lb-close').focus()});
+  });
+  lb.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+})();
+</script>
+</body>
+</html>
